@@ -14,6 +14,6 @@ Le processus d'analyse écrit en python est contenu dans le fichier process.py. 
 ### Utilisation sur raspberry pi
 Pour l'utiliser sur Raspberry pi, je recommande l'installation de berryconda (https://github.com/jjhelmus/berryconda), qui permet d'avoir tous les modules nécessaires à l'analyse. Il faut ensuite créer un environnement virtuel sur sa mahcine :
 
-'''
+```
 conda create -n environnement python=python3.x matplotlib numpy
-'''
+```
