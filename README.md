@@ -1,5 +1,5 @@
 # stageVitirover
-Approche logicielle à la détection d’anomalies mécaniques pour la micro-robotique agricole
+Approche logicielle à la détection d’anomalies mécaniques pour la micro-robotique agricole. Stage de deux mois.
 
 La lecture du rapport et notamment de la partie II et III est recommandé pour la compréhension du problème et de la méthode de résolution.
 
