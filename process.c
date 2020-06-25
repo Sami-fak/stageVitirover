@@ -340,6 +340,28 @@ int regleDecision(VariablesLog *disques) {
 	}
 }
 
+int prevenirBerger() {
+	FILE *f = NULL;
+	int compteur = 0;
+	f = fopen("logVariation.txt", "r");
+	if (!f) 
+		return -1;
+	char chaine[TAILLE_MAX];
+	while(fgets(chaine, TAILLE_MAX, f) != NULL) {
+		if (strcmp(chaine, "Decision : 1\n") == 0)
+		{
+			compteur++;
+		}
+	}
+	fclose(f);
+
+	if (compteur > 3) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
 
 void test() { //Fonction pour tester les autres
 	// printf("Test fonction vitesseDeRotation : ");
@@ -387,7 +409,10 @@ void test() { //Fonction pour tester les autres
 	printf("Vitesse de rotation : %d\n", disques.vitesseDeRotation[0]);
 	int decision = regleDecision(&disques);
 	logVariation(&disques, decision);
+	int prevent = prevenirBerger();
+	printf("%d\n", prevent);
 }
+
 void saferFree(void **pp) {
 	if (pp != NULL && *pp != NULL) {
 		free(*pp);
