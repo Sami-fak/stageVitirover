@@ -84,7 +84,7 @@ void fft_block_close()
     {
         return;
     }
-
+    
     /* Free dynamic memory. 4 malloc's == 4 free's */
     free(_this->p_pcm_samples);
     free(_this->p_fft_mag);
@@ -136,10 +136,10 @@ int fft_block_process
                 PeakValue = _this->p_fft_mag[j];
                 printf("Peak Value : %f, found at f = %f\n",_this->p_fft_mag[j],_this->p_freq_bins[j]);
 	            FILE *f = NULL;
-				f = fopen("log.txt", "a");
+				f = fopen("log_c.txt", "a");
 				if (!f)
 					exit(EXIT_FAILURE);
-				fprintf(f, "%f %s %f\n", _this->p_fft_mag[j], ",", _this->p_freq_bins[j]);
+				fprintf(f, "%f \n%f\n", _this->p_freq_bins[j], _this->p_fft_mag[j]);
 				fclose(f);
           	}
         }       

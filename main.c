@@ -42,12 +42,6 @@ static int callback(const void* input,
 
 int main(int argc, const char * argv[])
 {
-    FILE *f = NULL;
-    f = fopen("log.txt", "a");
-    if (!f)
-      return -1;
-    fprintf(f, "-----debut nouvel enregistrement------\n");
-    fclose(f);
     int fft_err;
     PaStream *stream;
     PaError err;
@@ -79,8 +73,15 @@ int main(int argc, const char * argv[])
 
     /* Stop Portaudio */
     printf("\nDone!\n");
+    FILE *f = NULL;
+    f = fopen("log_c.txt", "a");
+    if (!f)
+        return -1;
+    fprintf(f, "-----debut nouvel enregistrement------\n");
+    fclose(f);
     err = Pa_StopStream(stream);
     PA_CHECKERROR(err);
+
 
     /* free the fft block */
     fft_block_close();

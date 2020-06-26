@@ -107,18 +107,6 @@ float variation(int moyenneReference, int moyenneTest) {
 	return abs(difference)/(float)moyenneReference*100;
 }
 
-typedef struct VariablesLog
-{
-	//Tableaux de 3 parce que 3 disques.
-	float variationFrequence[3];
-	float variationAmplitude[3];
-	int nombreDePeak[3];
-	float varianceAmp[3];
-	int vitesseDeRotation[3];
-} VariablesLog;
-
-void ouvertureLog(VariablesLog *disques);
-
 void ouvertureLog(VariablesLog *disques) {
 	long *frequences = (long*)calloc(TAILLE_MAX, sizeof(long));
 	long *amplitudes = (long*)calloc(TAILLE_MAX, sizeof(long));
@@ -275,7 +263,7 @@ void ouvertureLog(VariablesLog *disques) {
 					//Passage au prochain disque/enregistrement
 					disque++;
 					printf("Disque : %d, compteur : %d\n", disque, compteurPeak);
-					printf("Variance %d", disques->nombreDePeak[disque]);
+					// printf("Variance %d", disques->nombreDePeak[disque]);
 					compteurPeak = 0;
 					i = 0;
 					safeFree(binsFrequenceTest);
@@ -312,7 +300,7 @@ void ouvertureLog(VariablesLog *disques) {
 
 void logVariation(VariablesLog *disques, int decision) {
 	FILE *f = NULL;
-	f = fopen("logVariation.txt", "w");
+	f = fopen("logVariation.txt", "a");
 	int hours, minutes, seconds, day, month, year;
 	time_t now;
 	time(&now);
@@ -400,13 +388,13 @@ void test() { //Fonction pour tester les autres
 
 	ouvertureLog(&disques);
 	// struct VariablesLog disques = ouvertureLog();
-	printf("nbr %d\n", disques.nombreDePeak[0]);
-	printf("%f\n", disques.variationFrequence[0]);
-	printf("%f\n", disques.varianceAmp[0]);
+	// printf("nbr %d\n", disques.nombreDePeak[0]);
+	// printf("%f\n", disques.variationFrequence[0]);
+	// printf("%f\n", disques.varianceAmp[0]);
 
-	printf("Variation freq : %f\n", disques.variationFrequence[1]);
-	printf("Variation amplitude : %f\n", disques.variationAmplitude[1]);
-	printf("Vitesse de rotation : %d\n", disques.vitesseDeRotation[0]);
+	// printf("Variation freq : %f\n", disques.variationFrequence[1]);
+	// printf("Variation amplitude : %f\n", disques.variationAmplitude[1]);
+	// printf("Vitesse de rotation : %d\n", disques.vitesseDeRotation[0]);
 	int decision = regleDecision(&disques);
 	logVariation(&disques, decision);
 	int prevent = prevenirBerger();
