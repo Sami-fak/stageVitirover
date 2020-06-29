@@ -2,7 +2,14 @@
 
 int main(int argc, char const *argv[])
 {
-	test();
+	VariablesLog disques;
+
+	ouvertureLog(&disques);
+	int decision = regleDecision(&disques);
+	logVariation(&disques, decision);
+	int prevent = prevenirBerger();
+	printf("Prevenir berger : %d\n", prevent);
+	int destruction = remove("log_c.txt");
 }
 
 int vitesseDeRotation(int *frequenceFondamentale) {
@@ -44,7 +51,6 @@ float* binsCreation(long* tableau, int taille, int precision) {
 	if(!bins)
 		return NULL;
 	float decoupe = (float)range/precision;
-	printf("%f\n", decoupe);
 	for (int i = 0; i < precision+1; ++i)
 	{
 		bins[i] =  min + (i * decoupe);
@@ -60,7 +66,6 @@ float moyenne(float *bins, int *counts, int tailleTableau, int tailleBins) {
 		if (bins[i] > 10 && counts[i] != 0) {
 			somme = somme + bins[i]*counts[i];
 			taille = taille + counts[i];
-			printf("%d\n", taille);
 		}
 	}
 
@@ -73,7 +78,7 @@ float variance(long* tableau, int tailleTableau, int moyenne) {
 	{
 		if (tableau[i] != 0)	
 		{
-			somme = (tableau[i] - moyenne) * (tableau[i] - moyenne);
+			somme = somme + ((tableau[i] - moyenne) * (tableau[i] - moyenne));
 		}
 	}
 
@@ -110,9 +115,7 @@ float variation(int moyenneReference, int moyenneTest) {
 void ouvertureLog(VariablesLog *disques) {
 	long *frequences = (long*)calloc(TAILLE_MAX, sizeof(long));
 	long *amplitudes = (long*)calloc(TAILLE_MAX, sizeof(long));
-	// long frequences[TAILLE_MAX] = {0};
-	// long amplitudes[TAILLE_MAX] = {0};
-	char *ptr;
+	char *ptr = NULL;
 	char nouvelEnregistrement[STRING_LEN] = "-----debut nouvel enregistrement------\n";
 	int i=0;
 	int disque = 0;
@@ -133,21 +136,21 @@ void ouvertureLog(VariablesLog *disques) {
 	//permet de savoir si on a affaire à une frequence (ligne paire) ou une amplitude (ligne impaire)
 	FILE *f = NULL;
 	f = fopen("log_c.txt", "r");
+	if (!f) {
+		printf("Fichier introuvable. Relancer l'enregistrement.\n");
+		exit(-1);
+	}
+
 	char chaine[TAILLE_MAX];
 
 	while (fgets(chaine, TAILLE_MAX, f) != NULL) {
-		printf("%s", chaine);
 		if (strcmp(chaine, nouvelEnregistrement) == 0) {
 			if (disque == 0) {
-				printf("%ld\n", frequences[0]);
-				printf("%ld\n", amplitudes[0]);
 				if (frequences[0] != 0)
 				{	
 					//taille des tableaux freq et amp
 					int tailleFrequence = TAILLE_MAX;
 					int tailleAmplitudes = TAILLE_MAX;
-					printf("%d\n", tailleFrequence);
-					printf("%d\n", tailleAmplitudes);
 
 					//Creation des histogrammes respectifs
 						//frequence
@@ -157,25 +160,10 @@ void ouvertureLog(VariablesLog *disques) {
 						//amplitudes
 					float *binsAmplitude = binsCreation(amplitudes, tailleAmplitudes, precision);
 					int *countsAmplitude = countsHistogram(amplitudes, tailleAmplitudes, binsAmplitude, precision);
-					printf("Bins Amp : \n ");
-					for (int i = 0; i <= precision; ++i)
-					{
-						printf("%f, %d \n", binsAmplitude[i], countsAmplitude[i]);
-					}
-
-					printf("Bins Freq : \n");
-
-					for (int i = 0; i <= precision; ++i)
-					{
-						printf("%f, %d \n", binsFrequence[i], countsFrequence[i]);
-					}
-
 
 					//Determination des frequences et amplitudes moyennes à laquelle nous allons comparer les autres disques.
 					frequenceReference = moyenne(binsFrequence, countsFrequence, tailleFrequence, precision);
 					amplitudeReference = moyenne(binsAmplitude, countsAmplitude, tailleAmplitudes, precision);
-					printf("FREF : %d\n", frequenceReference);
-					printf("AREF : %d\n", amplitudeReference);
 					//Calcul de la Variance des amplitudes
 					varianceAmplitude = variance(amplitudes, tailleAmplitudes, amplitudeReference);
 
@@ -195,8 +183,6 @@ void ouvertureLog(VariablesLog *disques) {
 
 					//Passage au prochain disque/enregistrement
 					disque++;
-					printf("Disque : %d, compteur : %d\n", disque, compteurPeak);
-					// printf("Variance %f", disques->varianceAmp[disque]);	
 					compteurPeak = 0;
 					i = 0;
 					safeFree(binsFrequence);
@@ -206,7 +192,7 @@ void ouvertureLog(VariablesLog *disques) {
 					
 				} else {
 					printf("Aucunes donnees enregistrees.\n");
-					// int destruction = remove("log_c.txt");
+					int destruction = remove("log_c.txt");
 					exit(-1);
 				}
 			} else {
@@ -224,24 +210,9 @@ void ouvertureLog(VariablesLog *disques) {
 					float *binsAmplitudeTest = binsCreation(amplitudes, tailleAmplitudesTest, precision);
 					int *countsAmplitudeTest = countsHistogram(amplitudes, tailleAmplitudesTest, binsAmplitudeTest, precision);
 
-					printf("Bins Amp : \n ");
-					for (int i = 0; i <= precision; ++i)
-					{
-						printf("%f, %d \n", binsAmplitudeTest[i], countsAmplitudeTest[i]);
-					}
-
-					printf("Bins Freq : \n");
-
-					for (int i = 0; i <= precision; ++i)
-					{
-						printf("%f, %d \n", binsFrequenceTest[i], countsFrequenceTest[i]);
-					}
-
 					//Determination des frequences et amplitudes moyennes à laquelle nous allons comparer les autres disques.
 					frequenceTest = moyenne(binsFrequenceTest, countsFrequenceTest, tailleFrequenceTest, precision);
 					amplitudeTest = moyenne(binsAmplitudeTest, countsAmplitudeTest, tailleAmplitudesTest, precision);
-					printf("FREF : %d\n", frequenceTest);
-					printf("AREF : %d\n", amplitudeTest);
 
 					//Calcul de la Variance des amplitudes
 					varianceAmplitude = variance(amplitudes, tailleAmplitudesTest, amplitudeTest);
@@ -254,7 +225,7 @@ void ouvertureLog(VariablesLog *disques) {
 					disques->vitesseDeRotation[disque] = vitesseDeRotation(&frequenceTest);
 
 					//RAZ pour prochains enregistrements.
-					for (int j = 0; j < STRING_LEN; ++j)
+					for (int j = 0; j < TAILLE_MAX; ++j)
 					{
 						frequences[j] = 0;
 						amplitudes[j] = 0;
@@ -262,8 +233,6 @@ void ouvertureLog(VariablesLog *disques) {
 
 					//Passage au prochain disque/enregistrement
 					disque++;
-					printf("Disque : %d, compteur : %d\n", disque, compteurPeak);
-					// printf("Variance %d", disques->nombreDePeak[disque]);
 					compteurPeak = 0;
 					i = 0;
 					safeFree(binsFrequenceTest);
@@ -272,7 +241,7 @@ void ouvertureLog(VariablesLog *disques) {
 					safeFree(countsAmplitudeTest);
 				} else {
 					printf("Aucunes donnees enregistrees.\n");
-					// int destruction = remove("log_c.txt");
+					int destruction = remove("log_c.txt");
 					exit(-1);
 				}
 			}
@@ -281,19 +250,16 @@ void ouvertureLog(VariablesLog *disques) {
 			{
 				frequences[i] = strtol(chaine, &ptr, 10);
 				ptr = NULL;
-				printf("Freq = %ld\n", frequences[i]);
 			} else {
 				amplitudes[i] = strtol(chaine, &ptr, 10);
 				ptr = NULL;
-				printf("Amp = %ld\n", amplitudes[i]);
 				compteurPeak++;
 			}
 			i++;
-			
-			printf("%d\n", i);
 		}
 	}	
 
+	fclose(f);
 	safeFree(frequences);
 	safeFree(amplitudes);
 }
@@ -301,6 +267,8 @@ void ouvertureLog(VariablesLog *disques) {
 void logVariation(VariablesLog *disques, int decision) {
 	FILE *f = NULL;
 	f = fopen("logVariation.txt", "a");
+	if (!f) 
+		exit(-1);
 	int hours, minutes, seconds, day, month, year;
 	time_t now;
 	time(&now);
@@ -314,14 +282,14 @@ void logVariation(VariablesLog *disques, int decision) {
 	fprintf(f, "Nbr Peak :\t");fprintf(f, "%d\t\t", disques->nombreDePeak[0]); fprintf(f, "%d\t\t", disques->nombreDePeak[1]);fprintf(f, "%d\n", disques->nombreDePeak[2]);
 	fprintf(f, "Decision : %d\n", decision);
 	fclose(f);
+	printf("Donnees enregistrees\n");
 }
 
 //Retourne 1 si un probleme est detecté, 0 sinon.
 int regleDecision(VariablesLog *disques) {
-	if ((disques->variationAmplitude[1] > 10 || disques->variationAmplitude[2] > 10) 
-		&& (disques->variationFrequence[1] > 10 || disques->variationFrequence[2] > 10) 
+	if ((disques->variationAmplitude[1] > 14 || disques->variationAmplitude[2] > 14) 
 		&& (disques->nombreDePeak[0] > 60 || disques->nombreDePeak[1] > 60 || disques->nombreDePeak[2] > 60) 
-		&& (disques->varianceAmp[0] > 150 || disques->varianceAmp[1] > 150 || disques->varianceAmp[2] > 150)) {
+		&& (disques->varianceAmp[0] > 130 || disques->varianceAmp[1] > 130 || disques->varianceAmp[2] > 130)) {
 		return 1;
 	} else {
 		return 0;
@@ -348,57 +316,6 @@ int prevenirBerger() {
 	} else {
 		return 0;
 	}
-}
-
-
-void test() { //Fonction pour tester les autres
-	// printf("Test fonction vitesseDeRotation : ");
-	// int frequence = 60;
-	// int resultat = vitesseDeRotation(&frequence);
-	// printf("%d\n", resultat);
-
-	// printf("Test fonction size : ");
-	// int tableau[] = {1,2,3,4,5,3,4};
-	// printf("%lu\n", sizeof(tableau)/sizeof(int));
-
-	// printf("Test de la fonction bins : ");
-	// long frequences[] = {1,2,3,10,15,20};
-	// long taille = sizeof(frequences)/sizeof(long);
-	// printf("%ld\n", taille);
-	// int precision = 10;
-	// float* bins = binsCreation(frequences, taille, precision);
-	// int *counts = countsHistogram(frequences, taille, bins, precision);
-	// if (bins) {
-	// 	for (int i = 0; i <= 10; ++i)
-	// 	{
-	// 		printf("%f, %d \n", bins[i], counts[i]);
-	// 	}
-
-	// 	safeFree(bins);
-	// 	safeFree(counts);
-	// }
-
-	// printf("Test de la fonction moyenne : \n");
-	// float bins2[] = {1,2,3,4};
-	// int counts2[] = {3,0,5,0};
-	// printf("%f\n", moyenne(bins2, counts2, 8, 4));
-
-	// printf("Test de la fonction ouvertureLog : \n");
-	VariablesLog disques;
-
-	ouvertureLog(&disques);
-	// struct VariablesLog disques = ouvertureLog();
-	// printf("nbr %d\n", disques.nombreDePeak[0]);
-	// printf("%f\n", disques.variationFrequence[0]);
-	// printf("%f\n", disques.varianceAmp[0]);
-
-	// printf("Variation freq : %f\n", disques.variationFrequence[1]);
-	// printf("Variation amplitude : %f\n", disques.variationAmplitude[1]);
-	// printf("Vitesse de rotation : %d\n", disques.vitesseDeRotation[0]);
-	int decision = regleDecision(&disques);
-	logVariation(&disques, decision);
-	int prevent = prevenirBerger();
-	printf("%d\n", prevent);
 }
 
 void saferFree(void **pp) {

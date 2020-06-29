@@ -4,7 +4,7 @@
 #include <time.h>
 
 #define safeFree(p) saferFree((void**)&(p))
-#define TAILLE_MAX 200 // généralement le log dépasse rarement les 10 peaks. Donc je mets large pour l'instant meme si j'aimerai trouver une autre solution.
+#define TAILLE_MAX 400 // généralement le log dépasse rarement les 10 peaks. Donc je mets large pour l'instant meme si j'aimerai trouver une autre solution.
 #define STRING_LEN 50
 
 typedef struct VariablesLog
@@ -19,7 +19,6 @@ typedef struct VariablesLog
 
 void saferFree(void **pp);
 int vitesseDeRotation(int *frequenceFondamentale);
-void test();
 int minimum(long * tableau, int taille); //retourne la valeur minimale d'un tablea
 int maximum(long * tableau, int taille);
 int* countsHistogram(

@@ -15,7 +15,7 @@
 
 
 #define SAMPLE_RATE 48000
-#define FFT_LENGTH  32768
+#define FFT_LENGTH  8192
 #define PA_CHECKERROR(x) assert( (x) == paNoError);
 
 

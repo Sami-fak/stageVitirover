@@ -1,0 +1,333 @@
+--------------------
+Fri Jun 26 11:09:37 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	2.517986	6.115108
+Variation Amp :	0.000000	4.545455	9.090909
+Vit. Rot. :	5560		5420		5220
+Variance Amp :	0.180000	0.980000	0.320000
+Nbr Peak :	25		32		6
+Decision : 0
+--------------------
+Fri Jun 26 11:41:18 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	1.444043	11.191336
+Variation Amp :	0.000000	5.882353	23.529411
+Vit. Rot. :	5540		5460		4920
+Variance Amp :	2.205000	0.245000	0.020000
+Nbr Peak :	21		29		6
+Decision : 0
+--------------------
+Mon Jun 29 09:34:56 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	7.142858	1.503759
+Variation Amp :	0.000000	4.347826	17.391304
+Vit. Rot. :	5320		5700		5240
+Variance Amp :	0.180000	0.245000	0.845000
+Nbr Peak :	24		74		49
+Decision : 0
+--------------------
+Mon Jun 29 09:37:20 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	7.142858	1.503759
+Variation Amp :	0.000000	4.347826	17.391304
+Vit. Rot. :	5320		5700		5240
+Variance Amp :	0.180000	0.245000	0.845000
+Nbr Peak :	24		74		49
+Decision : 0
+--------------------
+Mon Jun 29 09:37:48 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	7.142858	1.503759
+Variation Amp :	0.000000	4.347826	17.391304
+Vit. Rot. :	5320		5700		5240
+Variance Amp :	16.850000	80.739998	145.725006
+Nbr Peak :	24		74		49
+Decision : 0
+--------------------
+Mon Jun 29 09:40:14 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	7.169811	3.396226
+Variation Amp :	0.000000	13.953489	25.581396
+Vit. Rot. :	5300		5680		5480
+Variance Amp :	9.710000	93.555000	177.630005
+Nbr Peak :	28		89		42
+Decision : 0
+--------------------
+Mon Jun 29 09:41:54 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	8.783784	10.472973
+Variation Amp :	0.000000	6.000000	16.000000
+Vit. Rot. :	5920		5400		5300
+Variance Amp :	15.660000	85.690002	39.334999
+Nbr Peak :	32		63		34
+Decision : 0
+--------------------
+Mon Jun 29 09:43:55 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	3.832753	6.620209
+Variation Amp :	0.000000	0.000000	22.222223
+Vit. Rot. :	5740		5520		5360
+Variance Amp :	10.970000	86.375000	197.179993
+Nbr Peak :	30		72		69
+Decision : 0
+--------------------
+Mon Jun 29 09:53:41 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	0.000000	0.371747
+Variation Amp :	0.000000	12.280702	10.526316
+Vit. Rot. :	5380		5380		5360
+Variance Amp :	112.105003	158.839996	276.885010
+Nbr Peak :	56		90		65
+Decision : 0
+--------------------
+Mon Jun 29 09:56:18 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	0.367647	1.838235
+Variation Amp :	0.000000	29.850746	8.955224
+Vit. Rot. :	5440		5420		5340
+Variance Amp :	344.815002	90.529999	271.674988
+Nbr Peak :	80		77		39
+Decision : 0
+--------------------
+Mon Jun 29 10:02:44 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	0.367647	1.838235
+Variation Amp :	0.000000	29.850746	8.955224
+Vit. Rot. :	5440		5420		5340
+Variance Amp :	344.815002	90.529999	271.674988
+Nbr Peak :	80		77		39
+Decision : 1
+--------------------
+Mon Jun 29 10:04:23 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	1.449275	1.811594
+Variation Amp :	0.000000	13.114754	18.032785
+Vit. Rot. :	5520		5440		5420
+Variance Amp :	155.940002	90.470001	428.369995
+Nbr Peak :	66		47		99
+Decision : 1
+--------------------
+Mon Jun 29 10:07:33 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	10.305344	9.541985
+Variation Amp :	0.000000	25.333332	26.666668
+Vit. Rot. :	5240		5780		5740
+Variance Amp :	139.625000	51.505001	36.154999
+Nbr Peak :	73		59		57
+Decision : 0
+--------------------
+Mon Jun 29 10:08:46 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	10.305344	9.541985
+Variation Amp :	0.000000	25.333332	26.666668
+Vit. Rot. :	5240		5780		5740
+Variance Amp :	139.625000	51.505001	36.154999
+Nbr Peak :	73		59		57
+Decision : 1
+--------------------
+Mon Jun 29 10:14:47 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	12.977099	2.290076
+Variation Amp :	0.000000	11.290322	25.806450
+Vit. Rot. :	5240		5920		5360
+Variance Amp :	39.259998	69.370003	97.794998
+Nbr Peak :	37		54		55
+Decision : 0
+--------------------
+Mon Jun 29 10:16:36 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	1.503759	0.375940
+Variation Amp :	0.000000	25.675674	9.459459
+Vit. Rot. :	5320		5400		5300
+Variance Amp :	267.059998	64.605003	162.369995
+Nbr Peak :	87		51		74
+Decision : 1
+--------------------
+Mon Jun 29 10:19:27 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	3.676471	1.838235
+Variation Amp :	0.000000	18.461538	1.538462
+Vit. Rot. :	5440		5640		5540
+Variance Amp :	106.845001	41.785000	251.449997
+Nbr Peak :	64		61		89
+Decision : 1
+--------------------
+Mon Jun 29 10:51:00 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	1.083032	2.527076
+Variation Amp :	0.000000	27.710842	2.409638
+Vit. Rot. :	5540		5600		5400
+Variance Amp :	201.627502	52.189999	244.809998
+Nbr Peak :	119		56		109
+Decision : 1
+--------------------
+Mon Jun 29 10:54:24 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	1.083032	2.527076
+Variation Amp :	0.000000	27.710842	2.409638
+Vit. Rot. :	5540		5600		5400
+Variance Amp :	201.627502	52.189999	244.809998
+Nbr Peak :	119		56		109
+Decision : 1
+--------------------
+Mon Jun 29 10:57:26 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	4.676259	3.237410
+Variation Amp :	0.000000	5.263158	42.105263
+Vit. Rot. :	5560		5300		5380
+Variance Amp :	11.627500	19.910000	144.042496
+Nbr Peak :	51		25		103
+Decision : 1
+--------------------
+Mon Jun 29 11:11:27 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	6.083650	5.323194
+Variation Amp :	0.000000	8.955224	16.417910
+Vit. Rot. :	5260		5580		5540
+Variance Amp :	101.852501	43.992500	31.000000
+Nbr Peak :	74		55		69
+Decision : 0
+--------------------
+Mon Jun 29 11:14:48 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	6.083650	5.323194
+Variation Amp :	0.000000	8.955224	16.417910
+Vit. Rot. :	5260		5580		5540
+Variance Amp :	101.852501	43.992500	31.000000
+Nbr Peak :	74		55		69
+Decision : 0
+--------------------
+Mon Jun 29 11:16:22 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	0.760456	9.125476
+Variation Amp :	0.000000	1.666667	5.000000
+Vit. Rot. :	5260		5220		5740
+Variance Amp :	18.415001	14.937500	99.485001
+Nbr Peak :	43		41		111
+Decision : 0
+--------------------
+Mon Jun 29 11:19:28 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	2.158273	4.316547
+Variation Amp :	0.000000	5.000000	6.666667
+Vit. Rot. :	5560		5680		5320
+Variance Amp :	157.477493	18.587500	14.407500
+Nbr Peak :	155		57		77
+Decision : 0
+--------------------
+Mon Jun 29 11:21:53 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	1.886792	1.886792
+Variation Amp :	0.000000	7.812500	0.000000
+Vit. Rot. :	5300		5200		5400
+Variance Amp :	58.822498	19.570000	31.912500
+Nbr Peak :	113		48		80
+Decision : 0
+--------------------
+Mon Jun 29 11:23:52 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	8.275862	1.379310
+Variation Amp :	0.000000	3.278688	3.278688
+Vit. Rot. :	5800		5320		5720
+Variance Amp :	164.697495	21.842501	34.707500
+Nbr Peak :	147		56		117
+Decision : 0
+
+Tests avec dents nouvelles cassées. Normalement ca devrait les detecter à chaque fois vu le boucan que ca fait.
+
+--------------------
+Mon Jun 29 11:33:43 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	5.405406	5.791506
+Variation Amp :	0.000000	0.000000	28.571430
+Vit. Rot. :	5180		5460		5480
+Variance Amp :	6.130000	14.867500	235.684998
+Nbr Peak :	55		50		120
+Decision : 1
+--------------------
+Mon Jun 29 11:38:34 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	5.405406	5.791506
+Variation Amp :	0.000000	0.000000	28.571430
+Vit. Rot. :	5180		5460		5480
+Variance Amp :	6.130000	14.867500	235.684998
+Nbr Peak :	55		50		120
+Decision : 1
+--------------------
+Mon Jun 29 11:44:36 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	5.415163	2.166065
+Variation Amp :	0.000000	14.492753	14.492753
+Vit. Rot. :	5540		5240		5420
+Variance Amp :	277.267487	25.842501	60.377499
+Nbr Peak :	162		54		115
+Decision : 1
+--------------------
+Mon Jun 29 11:46:29 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	2.214022	0.738007
+Variation Amp :	0.000000	18.032785	22.950819
+Vit. Rot. :	5420		5540		5380
+Variance Amp :	17.747499	25.812500	194.645004
+Nbr Peak :	56		48		101
+Decision : 1
+--------------------
+Mon Jun 29 11:47:37 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	8.561644	4.452055
+Variation Amp :	0.000000	13.235294	1.470588
+Vit. Rot. :	5840		5340		5580
+Variance Amp :	32.632500	16.732500	261.027496
+Nbr Peak :	120		53		159
+Decision : 0
+--------------------
+Mon Jun 29 11:49:34 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	8.208955	1.119403
+Variation Amp :	0.000000	6.849315	35.616440
+Vit. Rot. :	5360		5800		5300
+Variance Amp :	218.600006	109.220001	24.952499
+Nbr Peak :	114		87		53
+Decision : 1
+--------------------
+Mon Jun 29 11:50:51 2020
+
+		 Disque 1 	Disque 2 	Disque 3 
+Variation f. :	0.000000	13.818182	3.272727
+Variation Amp :	0.000000	7.547170	32.075470
+Vit. Rot. :	5500		6260		5320
+Variance Amp :	13.325000	21.707500	254.382507
+Nbr Peak :	64		91		105
+Decision : 1

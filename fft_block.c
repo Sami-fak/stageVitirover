@@ -105,7 +105,7 @@ int fft_block_process
 )
 {
     unsigned long i;
-    int PeakValue = 30;
+    int PeakValue = 40;
 
 
     if(!b_initialized)
