@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
 	logVariation(&disques, decision);
 	int prevent = prevenirBerger();
 	printf("Prevenir berger : %d\n", prevent);
-	int destruction = remove("log_c.txt");
+	remove("log_c.txt");
 }
 
 int vitesseDeRotation(int *frequenceFondamentale) {
@@ -17,8 +17,8 @@ int vitesseDeRotation(int *frequenceFondamentale) {
 	//On divise par 3 car on regarde la troisieme harmonique
 }
 
-int minimum(long* tableau, int taille) {
-	int min = tableau[0];
+long minimum(long* tableau, int taille) {
+	long min = tableau[0];
 	for (int i = 0; i < taille; ++i)
 	{
 		if (tableau[i]<min)
@@ -30,8 +30,9 @@ int minimum(long* tableau, int taille) {
 	return min;
 }
 
-int maximum(long* tableau, int taille) {
-	int max = tableau[0];
+//mettre en long
+long maximum(long* tableau, int taille) {
+	long max = tableau[0];
 	for (int i = 0; i < taille; ++i)
 	{
 		if (tableau[i]>max)
@@ -44,9 +45,9 @@ int maximum(long* tableau, int taille) {
 }
 
 float* binsCreation(long* tableau, int taille, int precision) {
-	int min = minimum(tableau, taille);
-	int max = maximum(tableau, taille);
-	int range = max-min;
+	long min = minimum(tableau, taille);
+	long max = maximum(tableau, taille);
+	long range = max-min;
 	float *bins = (float*)malloc((precision+1)*sizeof(float));
 	if(!bins)
 		return NULL;
@@ -108,8 +109,8 @@ int* countsHistogram(long *tableau, int tailleTableau, float bins[], int tailleB
 }
 
 float variation(int moyenneReference, int moyenneTest) {
-	int difference = moyenneReference - moyenneTest;
-	return abs(difference)/(float)moyenneReference*100;
+	float difference = moyenneReference - moyenneTest;
+	return fabs(difference)/(float)(moyenneReference)*100.0;
 }
 
 void ouvertureLog(VariablesLog *disques) {
@@ -192,7 +193,7 @@ void ouvertureLog(VariablesLog *disques) {
 					
 				} else {
 					printf("Aucunes donnees enregistrees.\n");
-					int destruction = remove("log_c.txt");
+					remove("log_c.txt");
 					exit(-1);
 				}
 			} else {
@@ -235,13 +236,15 @@ void ouvertureLog(VariablesLog *disques) {
 					disque++;
 					compteurPeak = 0;
 					i = 0;
-					safeFree(binsFrequenceTest);
+					safeFree(countsAmplitudeTest);
 					safeFree(binsAmplitudeTest);
 					safeFree(countsFrequenceTest);
-					safeFree(countsAmplitudeTest);
+					safeFree(binsFrequenceTest);
+					
+					
 				} else {
 					printf("Aucunes donnees enregistrees.\n");
-					int destruction = remove("log_c.txt");
+					remove("log_c.txt");
 					exit(-1);
 				}
 			}
